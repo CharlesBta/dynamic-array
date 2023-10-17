@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_dynamic_array: phony || CMakeFiles/dynam
 
 build CMakeFiles/dynamic_array.dir/main.c.o: C_COMPILER__dynamic_array_unscanned_Debug /Users/charlesbta/Documents/GitHub/dynamic-array/main.c || cmake_object_order_depends_target_dynamic_array
   DEP_FILE = CMakeFiles/dynamic_array.dir/main.c.o.d
-  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/dynamic_array.dir
   OBJECT_FILE_DIR = CMakeFiles/dynamic_array.dir
   TARGET_COMPILE_PDB = CMakeFiles/dynamic_array.dir/
@@ -66,7 +66,7 @@ build CMakeFiles/dynamic_array.dir/main.c.o: C_COMPILER__dynamic_array_unscanned
 # Link the executable dynamic_array
 
 build dynamic_array: C_EXECUTABLE_LINKER__dynamic_array_Debug CMakeFiles/dynamic_array.dir/main.c.o
-  FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.0.sdk
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.0.sdk
   OBJECT_DIR = CMakeFiles/dynamic_array.dir
   POST_BUILD = :
   PRE_LINK = :

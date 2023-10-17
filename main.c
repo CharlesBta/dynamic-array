@@ -1,25 +1,45 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-struct StructureX{
+typedef struct {
     int value;
-    struct StructureX * pointeurX;
-};
-struct StructureX tab[];
+    struct StructureX* next;
+}StructureX;
 
+void ajouter(StructureX** list, int value){
+    StructureX* item = malloc(sizeof(StructureX));
+    item->value = value;
+    item->next = *list;
+    *list = item;
+}
 
+void afficher(StructureX *list){
+    if(list->next == NULL) {
+        printf("%d\n",list->value);
+        return;
+    }
+    afficher(list->next);
+    printf("%d\n",list->value);
+}
+
+void liberer(StructureX *list){
+    if(list->next == NULL) {
+        free(list);
+        return;
+    }
+    liberer(list->next);
+    free(list);
+}
 
 int main() {
+
+    StructureX *list = NULL;
     for (int i = 0; i < 10; ++i) {
-        tab[i].value = i*3;
-        printf("i =%d, value =%d\n",i,tab[i].value);
-        tab[i].pointeurX = &tab[i+1];
+        ajouter(&list,i);
     }
-    printf("here: ");
-    int rang;
-    scanf("%d",&rang);
 
-    printf("Valeur de rang:%d : %d\n",rang, tab[rang].value);
-    printf("Valeur de rang:%d à travers le pointeur : %d\n",rang, tab[rang-1].pointeurX->value);
-
+    afficher(list);
+    liberer(list);
     return 0;
 }
+

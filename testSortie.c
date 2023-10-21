@@ -1,12 +1,20 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(int argc, char* args[]){
-    printf("%d\n",argc);
+void incremente(int value){
+    value ++;
+}
 
-    for (int i = 1; i < argc; ++i) {
-        printf("%s\n",args[i]);
-    }
+void newincrement(int *value){
+    (*value)++;
+}
 
+int main(void){
+    int a = 0;
+    printf("%d\n",a);
+    incremente(a);
+    printf("%d\n",a);
+    newincrement(&a);
+    printf("%d",a);
     return 0;
 }
